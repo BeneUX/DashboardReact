@@ -11,6 +11,7 @@ import PieChart from "../components/Charts/PieChart"
 import LineChart from "../components/Charts/LineChart"
 import VerticalBarChart from "../components/Charts/VerticalBarChart"
 import MultitypeChart from "../components/Charts/MultitypeChart"
+import DatagridNormal from "../components/Datagrids/DatagridNormal"
 export default function Dashboard() {
   return (
     <>
