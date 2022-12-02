@@ -12,21 +12,27 @@ import LineChart from "../components/Charts/LineChart"
 import VerticalBarChart from "../components/Charts/VerticalBarChart"
 import MultitypeChart from "../components/Charts/MultitypeChart"
 import DatagridNormal from "../components/Datagrids/DatagridNormal"
+import AdvancedTile from "../components/DashboardTiles/AdvancedTile"
 export default function Dashboard() {
   return (
     <>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={12} sm={6} md={3}>
-          <IconTile TileContext="Capacity" TileValue="950 GB" TileIcon={StorageIcon} IconColor="green" />
+          <AdvancedTile
+            TileContext="Capacity"
+            TileValue="950 GB"
+            TileIcon={StorageIcon}
+            IconBackgroundColor={"linear-gradient(195deg, rgb(102, 187, 106), rgb(67, 160, 71))"}
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3} lg={3}>
+          <AdvancedTile TileContext="Occupied" TileValue="105 GB" TileIcon={DiscFullIcon} IconBackgroundColor={"purple"} />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <IconTile TileContext="Occupied" TileValue="105 GB" TileIcon={DiscFullIcon} IconColor="red" />
+          <AdvancedTile TileContext="Network" TileValue="233 MB/s" TileIcon={NetworkCheckIcon} IconBackgroundColor={"orange"} />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          <IconTile TileContext="Network" TileValue="233 MB/s" TileIcon={NetworkCheckIcon} IconColor="orange" />
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <IconTile TileContext="Followers" TileValue="+432" TileIcon={TwitterIcon} IconColor="00ACEE" />
+          <AdvancedTile TileContext="Followers" TileIcon={TwitterIcon} TileValue="+91" IconBackgroundColor="#00acee" />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <VerticalBarChart />
