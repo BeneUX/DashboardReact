@@ -38,10 +38,10 @@ export default function ChartsPage() {
         </Grid>
         <Grid item xs={12} mb={"1rem"} mt={"1rem"}>
           <Divider orientation="horizontal" flexItem>
-            <Typography variant="h6">Horizontal Bar Chart eg. Reviews</Typography>
+            <Typography variant="h6">Horizontal Bar Chart e.g. Reviews</Typography>
           </Divider>
         </Grid>
-        <Grid item xs={12}>
+        <Grid container justifyContent={"center"}>
           <HorizontalBarChart />
         </Grid>
         <Grid item xs={12} mb={"1rem"} mt={"1rem"}>
