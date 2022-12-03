@@ -31,10 +31,10 @@ export default function Dashboard() {
         <Grid item xs={12} sm={6} md={3}>
           <AdvancedTile TileContext="Followers" TileIcon={TwitterIcon} TileValue="+91" IconBackgroundColor="#00acee" />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={6}>
           <AuthorsTable />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={6}>
           <ProjectsTable />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>

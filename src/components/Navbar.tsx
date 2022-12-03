@@ -49,6 +49,7 @@ function Navbar() {
     <AppBar position="static">
       <Toolbar disableGutters>
         {/* <AdbIcon style={{ marginLeft: "20px" }} sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+
         <Typography
           variant="h6"
           style={{ marginLeft: "30px" }}
@@ -65,7 +66,7 @@ function Navbar() {
             textDecoration: "none",
           }}
         >
-          Dashboard
+          Dashboard V1
         </Typography>
 
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -97,11 +98,43 @@ function Navbar() {
               display: { xs: "block", md: "none" },
             }}
           >
-            {pages.map((page) => (
+            <Button
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              Components
+            </Button>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <Link to={"/tables"} style={{ color: "white", textDecoration: "none" }}>
+                <MenuItem onClick={handleClose}>Tables</MenuItem>
+              </Link>
+              <Link to={"/tiles"} style={{ color: "white", textDecoration: "none" }}>
+                <MenuItem onClick={handleClose}>Tiles</MenuItem>
+              </Link>
+              <Link to={"/charts"} style={{ color: "white", textDecoration: "none" }}>
+                <MenuItem onClick={handleClose}>Charts</MenuItem>
+              </Link>
+              <Link to={"/datagrids"} style={{ color: "white", textDecoration: "none" }}>
+                <MenuItem onClick={handleClose}>Datagrids</MenuItem>
+              </Link>
+            </Menu>
+            {/* {pages.map((page) => (
               <MenuItem key={page} onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">{page}</Typography>
               </MenuItem>
-            ))}
+            ))} */}
           </Menu>
         </Box>
         {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
@@ -109,7 +142,7 @@ function Navbar() {
           variant="h5"
           noWrap
           component="a"
-          href=""
+          href="/"
           sx={{
             mr: 2,
             display: { xs: "flex", md: "none" },
@@ -121,7 +154,7 @@ function Navbar() {
             textDecoration: "none",
           }}
         >
-          Dashboard
+          Dashboard V1
         </Typography>
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {/* {pages.map((page) => (
