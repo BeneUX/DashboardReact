@@ -2,6 +2,7 @@ import React from "react"
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js"
 import { Line } from "react-chartjs-2"
 import Paper from "@mui/material/Paper"
+import { Box } from "@mui/material"
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
@@ -41,8 +42,10 @@ export const data = {
 
 export default function LineChart() {
   return (
-    <Paper style={{ height: "100%" }} elevation={15}>
-      <Line height={300} options={options} data={data} />
-    </Paper>
+    <Box p={"1rem"}>
+      <Paper style={{ height: "100%" }} elevation={15}>
+        <Line height={300} options={options} data={data} />
+      </Paper>
+    </Box>
   )
 }

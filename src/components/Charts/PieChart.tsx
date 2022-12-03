@@ -2,6 +2,7 @@ import React from "react"
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js"
 import { Pie } from "react-chartjs-2"
 import Paper from "@mui/material/Paper"
+import { Box } from "@mui/material"
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
@@ -34,8 +35,10 @@ export const data = {
 
 export default function PieChart() {
   return (
-    <Paper>
-      <Pie data={data} />
-    </Paper>
+    <Box p={"1rem"}>
+      <Paper>
+        <Pie data={data} />
+      </Paper>
+    </Box>
   )
 }

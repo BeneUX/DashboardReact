@@ -22,7 +22,7 @@ interface Props {
 export default function AdvancedTile(props: Props) {
   const Icon = props.TileIcon
   return (
-    <Box mb={"12px"} mt={"12px"} style={{ borderRadius: "0.75rem" }}>
+    <Box p={"1rem"} style={{ borderRadius: "0.75rem" }}>
       <Paper elevation={1}>
         <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
           <Box
@@ -50,7 +50,7 @@ export default function AdvancedTile(props: Props) {
           </Box>
         </Stack>
 
-        <Divider />
+        <Divider variant="middle" />
         <Box>
           <Typography p={2} style={{ opacity: "60%" }}>
             Just updated

@@ -12,6 +12,7 @@ import Button from "@mui/material/Button"
 import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
 import AdbIcon from "@mui/icons-material/Adb"
+import { Link } from "react-router-dom"
 
 const pages = ["Links"]
 const settings = ["Profile", "Account", "Dashboard", "Logout"]
@@ -33,6 +34,15 @@ function Navbar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null)
+  }
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
   }
 
   return (
@@ -114,11 +124,43 @@ function Navbar() {
           Dashboard
         </Typography>
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-          {pages.map((page) => (
+          {/* {pages.map((page) => (
             <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: "white", display: "block" }}>
               {page}
             </Button>
-          ))}
+          ))} */}
+          <Button
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            Components
+          </Button>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <Link to={"/tables"} style={{ color: "white", textDecoration: "none" }}>
+              <MenuItem onClick={handleClose}>Tables</MenuItem>
+            </Link>
+            <Link to={"/tiles"} style={{ color: "white", textDecoration: "none" }}>
+              <MenuItem onClick={handleClose}>Tiles</MenuItem>
+            </Link>
+            <Link to={"/charts"} style={{ color: "white", textDecoration: "none" }}>
+              <MenuItem onClick={handleClose}>Charts</MenuItem>
+            </Link>
+            <Link to={"/datagrids"} style={{ color: "white", textDecoration: "none" }}>
+              <MenuItem onClick={handleClose}>Datagrids</MenuItem>
+            </Link>
+          </Menu>
         </Box>
 
         <Box sx={{ flexGrow: 0 }}>

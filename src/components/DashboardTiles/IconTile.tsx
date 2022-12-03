@@ -24,35 +24,37 @@ export default function IconTile(props: Props) {
   const Icon = props.TileIcon
 
   return (
-    <Paper elevation={15}>
-      <Card>
-        <CardContent>
-          <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
-            {/* <StorageIcon fontSize="large" color="warning" />
-             */}
-            <Icon fontSize="large" style={{ color: props.IconColor }} />
-            <Stack>
-              <Typography variant="h6">{props.TileContext}</Typography>
-              <Typography variant="h5">{props.TileValue}</Typography>
+    <Box p={"1rem"}>
+      <Paper elevation={15}>
+        <Card>
+          <CardContent>
+            <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
+              {/* <StorageIcon fontSize="large" color="warning" />
+               */}
+              <Icon fontSize="large" style={{ color: props.IconColor }} />
+              <Stack>
+                <Typography variant="h6">{props.TileContext}</Typography>
+                <Typography variant="h5">{props.TileValue}</Typography>
+              </Stack>
             </Stack>
-          </Stack>
-        </CardContent>
-        <Divider />
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            flexWrap: "wrap",
-            // marginLeft: 10,
-            padding: 10,
-          }}
-        >
-          <SyncIcon fontSize="small" style={{ color: "grey" }} />
-          <Typography variant="body2" color="grey" align="right">
-            Updated now
-          </Typography>
-        </div>
-      </Card>
-    </Paper>
+          </CardContent>
+          <Divider />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexWrap: "wrap",
+              // marginLeft: 10,
+              padding: 10,
+            }}
+          >
+            <SyncIcon fontSize="small" style={{ color: "grey" }} />
+            <Typography variant="body2" color="grey" align="right">
+              Updated now
+            </Typography>
+          </div>
+        </Card>
+      </Paper>
+    </Box>
   )
 }

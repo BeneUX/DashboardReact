@@ -1,6 +1,7 @@
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js"
 import { Bar } from "react-chartjs-2"
 import Paper from "@mui/material/Paper"
+import { Box } from "@mui/material"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
@@ -38,9 +39,10 @@ export const data = {
 
 export default function VerticalBarChart() {
   return (
-    // style={{ height: 224 }}
-    <Paper style={{ height: "100%" }} elevation={15}>
-      <Bar height={300} options={options} data={data} />
-    </Paper>
+    <Box p={"1rem"}>
+      <Paper style={{ height: "100%" }} elevation={15}>
+        <Bar height={300} options={options} data={data} />
+      </Paper>
+    </Box>
   )
 }

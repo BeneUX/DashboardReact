@@ -12,7 +12,7 @@ import {
   BarController,
 } from "chart.js"
 import { Chart } from "react-chartjs-2"
-import { Paper } from "@mui/material"
+import { Box, Paper } from "@mui/material"
 
 ChartJS.register(LinearScale, CategoryScale, BarElement, PointElement, LineElement, Legend, Tooltip, LineController, BarController)
 
@@ -62,8 +62,10 @@ export const data = {
 
 export default function MultitypeChart() {
   return (
-    <Paper style={{ height: "100%" }} elevation={15}>
-      <Chart height={300} options={options} type="bar" data={data} />
-    </Paper>
+    <Box p={"1rem"}>
+      <Paper style={{ height: "100%" }} elevation={15}>
+        <Chart height={300} options={options} type="bar" data={data} />
+      </Paper>
+    </Box>
   )
 }

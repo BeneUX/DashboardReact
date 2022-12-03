@@ -2,6 +2,7 @@ import React from "react"
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js"
 import { Bar } from "react-chartjs-2"
 import Paper from "@mui/material/Paper"
+import { Box } from "@mui/material"
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
@@ -49,8 +50,10 @@ const UserData = {
 
 export default function HorizontalBarChart() {
   return (
-    <Paper style={{ height: 250 }} elevation={15}>
-      <Bar options={options} data={UserData} />
-    </Paper>
+    <Box p={"1rem"}>
+      <Paper style={{ height: 250 }} elevation={15}>
+        <Bar options={options} data={UserData} />
+      </Paper>
+    </Box>
   )
 }
